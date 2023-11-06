@@ -3,7 +3,7 @@ package bean;
 public class Follows implements java.io.Serializable{
 
 //	ユーザクラスの情報は非公開、
-//	プロフィールクラスを公開情報とする。阿部雅矢
+//	プロフィールクラスを公開情報とする。
 
 	private int id;
 	private String followerid;
