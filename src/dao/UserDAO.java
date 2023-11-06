@@ -8,11 +8,11 @@ import bean.User;
 
 public class UserDAO extends DAO {
 
-	public int insert (User user) throws Exception {
+	public boolean insert(User user) throws Exception {
 	    Connection con = getConnection();
 
 	    PreparedStatement st = con.prepareStatement(
-	    	    "insert into product values (null, ?,?,?,?,?)");
+	    	    "INSERT INTO USER VALUES (NULL, ?,?,?,?,?)");
 
 	    st.setInt(1, user.getId());
 	    st.setString(2, user.getName());
@@ -24,6 +24,11 @@ public class UserDAO extends DAO {
 
 	    st.close();
 	    con.close();
-	    return line;
+
+		if(line > 0){
+			return true;
+		}else{
+			return false;
+		}
 	}
 }
